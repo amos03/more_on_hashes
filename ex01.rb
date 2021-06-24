@@ -154,11 +154,21 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
 garbage_and_refuse_money = 0
+unsanitary_money =0
+vegetation_money=0
 
 violations.each do |violation|
     if violation[:violation_category]=="Garbage and Refuse"
         garbage_and_refuse_money = violation[:money_owed] + garbage_and_refuse_money
+    elsif violation[:violation_category]=="Unsanitary Conditions"
+        unsanitary_money=violation[:money_owed] + unsanitary_money
+    elsif violation[:violation_category]=="Vegetation"
+        vegetation_money=violation[:money_owed] + vegetation_money
+
+
     end
 
 end
-puts garbage_and_refuse_money
+puts "Total Garbage and Refuse Fines: $#{garbage_and_refuse_money}."
+puts "Total Unsanitary Conditions Fines: $#{unsanitary_money}."
+puts "Total Vegetation Fines: $#{vegetation_money}."
