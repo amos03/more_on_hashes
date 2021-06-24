@@ -154,5 +154,5 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
 violations.each do |violation|
-    puts violation[violation_category:]
+    puts violation[:violation_category]
 end
