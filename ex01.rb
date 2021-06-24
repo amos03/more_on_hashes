@@ -157,6 +157,8 @@ garbage_and_refuse_money = 0
 unsanitary_money =0
 vegetation_money=0
 animals_money=0
+building_money=0
+chemical_money=0
 
 violations.each do |violation|
     if violation[:violation_category]=="Garbage and Refuse"
@@ -167,8 +169,10 @@ violations.each do |violation|
         vegetation_money=violation[:money_owed] + vegetation_money
     elsif violation[:violation_category]=="Animals and Pests"
         animals_money=violation[:money_owed]+animals_money
-
-
+    elsif violation[:violation_category]=="Building Conditions"
+        building_money=violation[:money_owed]+building_money
+    elsif violation[:violation_category]=="Chemical Hazards"
+        chemical_money=violation[:money_owed]+chemical_money
     end
 
 end
@@ -176,3 +180,5 @@ puts "Total Garbage and Refuse Fines: $#{garbage_and_refuse_money}."
 puts "Total Unsanitary Conditions Fines: $#{unsanitary_money}."
 puts "Total Vegetation Fines: $#{vegetation_money}."
 puts "Total Animals and Pests Fines: $#{animals_money}."
+puts "Total Building Condition Fines: $#{building_money}."
+puts "Total Chemical Hazards Fines: $#{chemical_money}."
