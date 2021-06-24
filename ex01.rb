@@ -153,6 +153,12 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 36.0, violation_category: "Unsanitary Conditions", date: "2012-09-19 00:00:00", inspection_id: "223814"},
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
+garbage_and_refuse_money = 0
+
 violations.each do |violation|
-    puts violation[:violation_category]
+    if violation[:violation_category]=="Garbage and Refuse"
+        garbage_and_refuse_money = violation[:money_owed] + garbage_and_refuse_money
+    end
+
 end
+puts garbage_and_refuse_money
