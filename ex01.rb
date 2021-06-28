@@ -199,7 +199,7 @@ violations.each do |violation|
     if violation[:violation_category]=="Garbage and Refuse"
         garbage_number += 1
     elsif violation[:violation_category]=="Unsanitary Conditions"
-        unsanitary_money+=1
+        unsanitary_number +=1
     elsif violation[:violation_category]=="Vegetation"
         vegetation_number+=1
     elsif violation[:violation_category]=="Animals and Pests"
@@ -212,4 +212,4 @@ violations.each do |violation|
 end
 
 puts "The total number of Garbage and Refuse violations is: #{garbage_number}."
-puts "The total number of Unsanitary Conditions violations is: #{unsanitary_money."
+puts "The total number of Unsanitary Conditions violations is: #{unsanitary_number}."
