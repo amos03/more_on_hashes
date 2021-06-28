@@ -16,7 +16,8 @@ digits.each do |digit|
 
 en.each do |english_word|
     counter +=1
-    numbers_languages[counter]={"English": english_word}
+    numbers_languages[counter][:English]=[english_word]
+    # numbers_languages[counter]={"English": english_word}
 end
 
 p numbers_languages
@@ -24,7 +25,7 @@ p numbers_languages
 counter=0
 fr.each do |french_word|
     counter+=1
-    numbers_languages[counter] ={"French": french_word}
+    numbers_languages[counter][:French]=[french_word]
 end
 
 p numbers_languages
