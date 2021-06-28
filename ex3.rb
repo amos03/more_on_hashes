@@ -12,8 +12,22 @@ attendance_data=[
 # #to display first event date's attendees:
 # puts attendance_data[0][:events][0][:attendees]
 
+counter = 0
+
 attendance_data.each do |datum|
+    puts ""
     puts datum[:city]
     puts "-----------------------"
+    datum[:events].each do |event|
+        event.each do |k,v|
+            counter +=1
+            if counter.odd? 
+                print "Date: #{v}, "
+            else
+                print "#{v} people"
+            puts ""
+            end
     
+    end
+end
 end
