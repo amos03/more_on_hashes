@@ -77,3 +77,10 @@ puts "Bella received #{bella_votes} votes."
 puts "Boots received #{boots_votes} votes."
 puts "Felix received #{felix_votes} votes."
 puts "Lucky received #{lucky_votes} votes."
+
+puts "---------------------------------------------"
+
+# determine the winner
+puts "Determining the winner:"
+# put name and total votes in a hash, iterate through hash to determine highest value and then display the key for it
+
