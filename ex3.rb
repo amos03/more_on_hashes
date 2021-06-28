@@ -14,19 +14,25 @@ attendance_data=[
 
 counter = 0
 
-attendance_data.each do |datum|
+def display_attendance(attendance_array)
+attendance_array.each do |datum|
     puts ""
     puts datum[:city]
     puts "-----------------------"
     datum[:events].each do |event|
-        event.each do |k,v|
-            counter +=1
-            if counter.odd? 
-                print "Date: #{v}, "
-            else
-                print "#{v} people"
-            puts ""
-            end
-        end
+        puts "Date: #{event[:date]}, #{event[:attendees]} people"
+
+        # event.each do |k,v|
+        #     counter +=1
+        #     if counter.odd? 
+        #         print "Date: #{v}, "
+        #     else
+        #         print "#{v} people"
+        #     puts ""
+        #     end
+        # end
 end
 end
+end
+
+display_attendance(attendance_data)
