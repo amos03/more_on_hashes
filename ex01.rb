@@ -153,6 +153,7 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 36.0, violation_category: "Unsanitary Conditions", date: "2012-09-19 00:00:00", inspection_id: "223814"},
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
+#Adding up total money owed in each category
 garbage_and_refuse_money = 0
 unsanitary_money =0
 vegetation_money=0
@@ -162,7 +163,7 @@ chemical_money=0
 
 violations.each do |violation|
     if violation[:violation_category]=="Garbage and Refuse"
-        garbage_and_refuse_money = violation[:money_owed] + garbage_and_refuse_money
+        garbage_and_refuse_money += violation[:money_owed]
     elsif violation[:violation_category]=="Unsanitary Conditions"
         unsanitary_money=violation[:money_owed] + unsanitary_money
     elsif violation[:violation_category]=="Vegetation"
@@ -182,3 +183,33 @@ puts "Total Vegetation Fines: $#{vegetation_money}."
 puts "Total Animals and Pests Fines: $#{animals_money}."
 puts "Total Building Condition Fines: $#{building_money}."
 puts "Total Chemical Hazards Fines: $#{chemical_money}."
+
+puts "--------------------------------------------------------"
+#Counting fines in each category
+
+puts "Counting Fines in Each Category"
+garbage_number=0
+unsanitary_number=0
+vegetation_number=0
+animals_number=0
+building_number=0
+chemical_number=0
+
+violations.each do |violation|
+    if violation[:violation_category]=="Garbage and Refuse"
+        garbage_number += 1
+    elsif violation[:violation_category]=="Unsanitary Conditions"
+        unsanitary_money+=1
+    elsif violation[:violation_category]=="Vegetation"
+        vegetation_number+=1
+    elsif violation[:violation_category]=="Animals and Pests"
+        animals_number+=1
+    elsif violation[:violation_category]=="Building Conditions"
+        building_number+=1
+    elsif violation[:violation_category]=="Chemical Hazards"
+        chemical_number+=1
+    end
+end
+
+puts "The total number of Garbage and Refuse violations is: #{garbage_number}."
+puts "The total number of Unsanitary Conditions violations is: #{unsanitary_money."
