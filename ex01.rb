@@ -213,3 +213,7 @@ end
 
 puts "The total number of Garbage and Refuse violations is: #{garbage_number}."
 puts "The total number of Unsanitary Conditions violations is: #{unsanitary_number}."
+puts "The total number of Vegetation violations is: #{vegetation_number}."
+puts "The total number of Animals and Pests violations is: #{animals_number}."
+puts "The total number of Building Conditions violations is: #{building_number}."
+puts "The total number of Chemical Hazards violations is: #{chemical_number}."
