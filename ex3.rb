@@ -27,7 +27,6 @@ attendance_data.each do |datum|
                 print "#{v} people"
             puts ""
             end
-    
-    end
+        end
 end
 end
