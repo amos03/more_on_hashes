@@ -5,7 +5,12 @@ ballots = [{1 => 'Smudge', 2 => 'Tigger', 3 => 'Simba'},
            {1 => 'Lucky', 2 => 'Felix', 3 => 'Bella'},
            {1 => 'Smudge', 2 => 'Simba', 3 => 'Felix'}]
 
+puts "Weighted votes received for each contestant:"
+puts "---------------------------------------------"
 puts ballots
+puts "---------------------------------------------"
+
+# Counting up no. of votes received for each
 
 smudge_votes = 0
 tigger_votes = 0
@@ -16,18 +21,59 @@ felix_votes = 0
 lucky_votes = 0
 
 ballots.each do |ballot|
-    puts ballot
-    ballot.each do |k,v|
-        if v=="Smudge"
-            smudge_votes = smudge_votes + k
-        elsif v=="Tigger"
-            tigger_votes=tigger_votes + k
-        else
-            puts "nothing added"
-                end
+        ballot.each do |k,v|
+        if k==1 && v=="Smudge"
+            smudge_votes += 3
+        elsif k==2 && v=="Smudge"
+            smudge_votes += 2
+        elsif k==3 && v=="Smudge"
+            smudge_votes += 1
+        elsif k==1 && v=="Tigger"
+            tigger_votes+=3
+        elsif k==2 && v=="Tigger"
+            tigger_votes+=2
+        elsif k==3 && v=="Tigger"
+            tigger_votes+=1
+        elsif k==1 && v=="Simba"
+            simba_votes+=3
+        elsif k==2 && v=="Simba"
+            simba_votes+=2
+        elsif k==3 && v=="Simba"
+            simba_votes+=1
+        elsif k==1 && v=="Bella"
+            bella_votes+=3
+        elsif k==2 && v=="Bella"
+            bella_votes+=2
+        elsif k==3 && v=="Bella"
+            bella_votes+=1
+        elsif k==1 && v=="Boots"
+            boots_votes+=3
+        elsif k==2 && v=="Boots"
+            boots_votes+=2
+        elsif k==3 && v=="Boots"
+            boots_votes+=1
+        elsif k==1 && v=="Felix"
+            felix_votes+=3
+        elsif k==2 && v=="Felix"
+            felix_votes+=2
+        elsif k==3 && v=="Felix"
+            felix_votes+=1
+        elsif k==1 && v=="Lucky"
+            lucky_votes+=3
+        elsif k==2 && v=="Lucky"
+            lucky_votes+=2
+        elsif k==3 && v=="Lucky"
+            lucky_votes+=1
+        end
     end
-
 end
-puts smudge_votes
-puts tigger_votes
 
+puts "Voting results:"
+puts "---------------------------------------------"
+puts "Smudge received #{smudge_votes} votes."
+puts "Tigger received #{tigger_votes} votes."
+puts "Simba received #{simba_votes} votes."
+puts "Bella received #{bella_votes} votes."
+puts "Boots received #{boots_votes} votes."
+puts "Felix received #{felix_votes} votes."
+puts "Lucky received #{lucky_votes} votes."
